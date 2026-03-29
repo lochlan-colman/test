@@ -1,0 +1,5 @@
+{
+  "name": "Daggerheart Companion 1",
+  "description": "A fully interactive, digital character sheet for Daggerheart TTRPG. Features clickable stats, dynamic dice rolling with Hope/Fear mechanics, and AI-powered rules insights.",
+  "requestFramePermissions": []
+}

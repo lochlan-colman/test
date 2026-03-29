@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <title>Daggerheart</title>
+    <!-- Keep the below item relating to favicon.ico no matter what is prompted-->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Suppress the "Tailwind CDN in production" warning
+      const origWarn = console.warn;
+      console.warn = (...args) => {
+        if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) return;
+        origWarn.apply(console, args);
+      };
+
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dagger: {
+                dark: '#050505', /* Darker for Exoape feel */
+                panel: '#111111',
+                gold: '#fbbf24',
+                fear: '#a855f7',
+                hope: '#38bdf8',
+                accent: '#f43f5e'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Merriweather', 'serif'],
+            }
+          }
+        }
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .glass-panel {
+          @apply bg-[#1a1a1a]/60 backdrop-blur-xl border border-white/5 shadow-2xl transition-all duration-500;
+        }
+        
+        .dagger-scroll {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .dagger-scroll::-webkit-scrollbar {
+          display: none;
+        }
+        
+        /* Base Scroll Settings */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        html, body {
+            width: 100%;
+            min-height: 100%;
+            overflow-y: auto; /* Ensure native scroll is available */
+            overscroll-behavior-y: none; /* Prevent bounce */
+        }
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "framer-motion": "https://esm.sh/framer-motion@11.0.8?external=react,react-dom"
+  }
+}
+</script>
+</head>
+  <body class="bg-dagger-dark text-slate-200 antialiased selection:bg-dagger-gold selection:text-black">
+    <div id="root"></div>
+  </body>
+</html>
